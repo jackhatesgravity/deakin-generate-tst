@@ -17,11 +17,11 @@ def generate_tst(chip_name: str, num_inputs: int) -> None:
     # Smash them together
     result: list = []
     for perm in range(len(permutations)):
-            temp_list: list = []
+            current_perm: list = []
             for input in range(num_inputs):
-                temp_list.append("set " + chip_inputs[input] + " " + str(permutations[perm][input])+ ", ")
-            temp_list.append("eval;\n")
-            result.append(temp_list)
+                current_perm.append("set " + chip_inputs[input] + " " + str(permutations[perm][input])+ ", ")
+            current_perm.append("eval;\n")
+            result.append(current_perm)
     
     # Write lines to file
     for line in result:
