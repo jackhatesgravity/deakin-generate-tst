@@ -1,6 +1,6 @@
 import itertools, sys
 
-def auto_eval(chip_name: str, num_inputs: int) -> None:
+def generate_tst(chip_name: str, num_inputs: int) -> None:
 
     tst = open(chip_name + ".tst", "w")
     tst.writelines("load " + chip_name + ".hdl;\n\n")
@@ -31,6 +31,6 @@ def auto_eval(chip_name: str, num_inputs: int) -> None:
 _chip_name = sys.argv[1]
 _num_inputs = int(sys.argv[2])
 
-auto_eval(_chip_name, _num_inputs)
+generate_tst(_chip_name, _num_inputs)
 print("Generating tst file for %s.hdl using %i inputs ..."%(_chip_name, _num_inputs))
 print("Done!")
